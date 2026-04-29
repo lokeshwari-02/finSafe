@@ -59,13 +59,14 @@ public class FinSafe {
                     System.out.println("Enter amount ");
                     double amount = sc.nextDouble();
                     acc.deposit(amount);
-                    System.out.println("Deposit successful");
+                    System.out.println("Deposit successful! Balance: " + acc.getBalance() );
                     break;
                 case 2:
                     System.out.println("Enter amount ");
                     double amount2 = sc.nextDouble();
                     try {
                         acc.processTransaction(amount2);
+                        System.out.println("Withdrawn successfully! Balance: " + acc.getBalance());
                     } catch (InSufficientFundsException e) {
                         System.out.println(e.getMessage());
                     } catch (IllegalArgumentException e1) {
